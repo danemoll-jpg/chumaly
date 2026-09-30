@@ -97,6 +97,18 @@ p { margin: 0 0 1em; }
 .menu-btn span::before { position: absolute; top: -7px; }
 .menu-btn span::after { position: absolute; top: 7px; }
 
+/* Text links across the header — computers only */
+.top-links { display: none; }
+@media (min-width: 960px) {
+  .top-links { display: flex; gap: 6px; margin-left: auto; margin-right: 14px; }
+  .top-links a {
+    padding: 8px 14px; border-radius: 999px;
+    background: rgba(255, 255, 255, .88); color: var(--rose-dark);
+    font-family: var(--sans); font-weight: 700; font-size: .95rem; text-decoration: none;
+  }
+  .top-links a:hover, .top-links a[aria-current="page"] { background: var(--rose); color: var(--white); }
+}
+
 /* ---------- Photo menu (hamburger drawer) ---------- */
 .menu {
   position: fixed; inset: 0; z-index: 100;
@@ -318,6 +330,15 @@ fieldset { border: 0; padding: 0; margin: 0 0 14px; }
 
 /* ---------- Bigger screens ---------- */
 @media (min-width: 640px) {
+  /* On bigger screens, show the page as a centered column with the hearts background
+     at its natural size — the same look as on a phone — instead of stretching it wide. */
+  body { background: linear-gradient(90deg, #ffd3e8, #fff0f7 50%, #ffd3e8) fixed; }
+  main {
+    max-width: 760px; margin: 0 auto;
+    background: var(--blush) url("../images/background-images/1143959384.jpg") center top / 100% auto repeat-y;
+    box-shadow: 0 0 40px rgba(174, 64, 165, .18);
+  }
+  .welcome-img { width: 400px; }
   .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .photo-grid.three { grid-template-columns: repeat(4, 1fr); }
   .tiles { grid-template-columns: repeat(3, 1fr); }
@@ -325,14 +346,18 @@ fieldset { border: 0; padding: 0; margin: 0 0 14px; }
   h1 { font-size: 2.4rem; }
 }
 @media (min-width: 960px) {
+  :root { --header-h: 84px; }
   body { font-size: 1.2rem; padding-bottom: 0; }
+  .site-header { padding: 0 28px; }
+  .logo-name { font-size: 2.6rem; }
+  .logo-tag { font-size: .85rem; }
   .action-bar { display: none; }
   .photo-grid { grid-template-columns: repeat(4, 1fr); }
-  .photo-grid.three { grid-template-columns: repeat(5, 1fr); }
+  .photo-grid.three { grid-template-columns: repeat(4, 1fr); }
   .tiles { grid-template-columns: repeat(4, 1fr); }
   .menu { left: auto; width: 560px; box-shadow: -10px 0 30px rgba(0, 0, 0, .2); }
   .menu .tiles { grid-template-columns: repeat(3, 1fr); }
-  .cards { grid-template-columns: repeat(3, 1fr); }
+
   .section { padding: 40px 24px; }
   .panel { padding: 30px 34px; }
 }

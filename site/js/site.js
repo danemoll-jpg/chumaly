@@ -38,6 +38,15 @@ const MENU = [
   ]},
 ];
 
+// Links shown across the top of the header on computers (phones use the photo menu).
+const TOP_LINKS = [
+  ["maltese-puppies.html", "Maltese Puppies"],
+  ["yorkie-puppies.html", "Yorkie Puppies"],
+  ["gallery.html", "Gallery"],
+  ["about-us.html", "About Us"],
+  ["contact-form.html", "Contact Form"],
+];
+
 const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
 /* ---------- Header + photo menu ---------- */
@@ -49,6 +58,9 @@ function buildHeader() {
       <span class="logo-name">Chumaly</span>
       <span class="logo-tag">Maltese &amp; Yorkies</span>
     </a>
+    <nav class="top-links" aria-label="Main pages">
+      ${TOP_LINKS.map(([href, label]) => `<a href="${href}"${href === currentPage ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
+    </nav>
     <button class="menu-btn" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false"><span></span></button>`;
 
   const groups = MENU.map(g => `
