@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact Us | Chumaly Maltese &amp; Yorkies</title>
+  <meta name="description" content="Contact Chumaly about a Maltese or Yorkie puppy — text, call, email or send us the inquiry form.">
+  <meta name="theme-color" content="#f078c5">
+  <meta property="og:site_name" content="Chumaly Maltese &amp; Yorkies">
+  <meta property="og:title" content="Contact Us | Chumaly">
+  <meta property="og:description" content="Contact Chumaly about a Maltese or Yorkie puppy — text, call, email or send us the inquiry form.">
+  <meta property="og:image" content="images/jiin-baby-boy-tes-yea-081419.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+<main id="main">
+<section class="section">
+  <span class="eyebrow">Chumaly Maltese and Yorkies</span>
+  <h1>Contact Us</h1>
+  <p class="lead">The fastest way to reach us is a text!</p>
+  <ul class="contact-list" style="margin-bottom:22px">
+    <li><a href="sms:+17709265340"><span class="ic" aria-hidden="true">💬</span><span><small>Text or call</small>770-926-5340</span></a></li>
+    <li><a href="mailto:chumaly@gmail.com"><span class="ic" aria-hidden="true">✉️</span><span><small>Email</small>chumaly@gmail.com</span></a></li>
+    <li><div><span class="ic" aria-hidden="true">📍</span><span><small>Location</small>Anniston, Alabama</span></div></li>
+  </ul>
+
+  <div class="panel">
+  <h2>Puppy Inquiry Form</h2>
+  <p class="form-note"><span class="req">*</span> Indicates required field</p>
+  <form name="contact" method="POST" action="thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+    <div class="row2"><div class="field"><label for="first-name">First name <span class="req">*</span></label><input id="first-name" name="first-name" type="text" required autocomplete="given-name"></div><div class="field"><label for="last-name">Last name <span class="req">*</span></label><input id="last-name" name="last-name" type="text" required autocomplete="family-name"></div></div>
+    <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+    <div class="field"><label for="address-1">Address <span class="req">*</span></label><input id="address-1" name="address-1" type="text" required autocomplete="address-line1"></div>
+    <div class="field"><label for="address-2">Address line 2</label><input id="address-2" name="address-2" type="text" autocomplete="address-line2"></div>
+    <div class="row2"><div class="field"><label for="city">City <span class="req">*</span></label><input id="city" name="city" type="text" required autocomplete="address-level2"></div><div class="field"><label for="state">State <span class="req">*</span></label><input id="state" name="state" type="text" required autocomplete="address-level1"></div></div>
+    <div class="row2"><div class="field"><label for="zip">Zip code <span class="req">*</span></label><input id="zip" name="zip" type="text" required autocomplete="postal-code"></div><div class="field"><label for="country">Country</label><input id="country" name="country" type="text" autocomplete="country-name" value="United States"></div></div>
+    <div class="field"><label for="puppy-interest">Puppy you're interested in</label><input id="puppy-interest" name="puppy-interest" type="text" placeholder="e.g. Joleen"></div>
+    <div class="row2">
+      <div class="field"><label for="breed">Breed <span class="req">*</span></label>
+        <select id="breed" name="breed" required><option value="">Select</option><option>Maltese</option><option>Yorkie</option></select></div>
+      <div class="field"><label for="gender">Gender <span class="req">*</span></label>
+        <select id="gender" name="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>No preference</option></select></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label for="size">Size you'd like <span class="req">*</span></label><input id="size" name="size" type="text" required placeholder="e.g. 3–5 lbs"></div>
+      <div class="field"><label for="price">Pet price <span class="req">*</span></label>
+        <select id="price" name="price" required><option>$3500 and up</option></select></div>
+    </div>
+    <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us a little about your family and home"></textarea></div>
+    <div class="btn-row"><button class="btn" type="submit">Send Inquiry</button></div>
+  </form>
+  </div>
+  <div class="center"><img class="divider" src="images/published/fc08de488d682b4d77d59a0b5be554e9.gif" alt="" width="128" height="78" loading="lazy"></div>
+</section>
+</main>
+</body>
+</html>
