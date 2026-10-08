@@ -245,8 +245,61 @@ function initForms() {
   });
 }
 
+/* ---------- Editable content (photos, puppies, reviews) ----------
+   The lists live in the data/ folder and are edited through Pages CMS
+   (see ADMIN-GUIDE.md). This turns them into the page. */
+const esc = t => String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// Small thumbnail if one exists, else a resized copy from Netlify, else the original photo.
+function photoImg(path, alt, w, h) {
+  const file = path.replace(/^\/?images\//, "");
+  const tries = [`images/thumbs/${file}`, `/.netlify/images?url=/${path}&w=800`, path];
+  return `<img src="${esc(tries[0])}" data-tries="${esc(JSON.stringify(tries.slice(1)))}" alt="${esc(alt)}" loading="lazy" width="${w}" height="${h}" onerror="const t=JSON.parse(this.dataset.tries||'[]');if(t.length){this.src=t.shift();this.dataset.tries=JSON.stringify(t)}">`;
+}
+
+const RENDERERS = {
+  gallery: (d, el) => (d.photos || []).map(p =>
+    `<li><figure style="margin:0"><a href="${esc(p)}" data-lightbox="gallery">${photoImg(p, "Chumaly puppy", 400, 400)}</a></figure></li>`).join(""),
+  sold: (d, el) => (d.photos || []).map(p =>
+    `<li><figure style="margin:0"><a href="${esc(p)}" data-lightbox="sold">${photoImg(p, "Chumaly puppy with new owner", 400, 400)}</a></figure></li>`).join(""),
+  puppies: (d, el) => (d.puppies || []).map(p => {
+    const id = String(p.name).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const slides = (p.photos || []).map(src =>
+      `<a href="${esc(src)}" data-lightbox="${esc(id)}" data-caption="${esc(p.name)}">${photoImg(src, p.name, 600, 510)}</a>`).join("");
+    const q = `contact-form.html?puppy=${encodeURIComponent(p.name)}&amp;breed=${el.dataset.breed || ""}`;
+    return `<article class="card" id="${esc(id)}">
+  ${slides ? `<div class="slides">${slides}</div>` : ""}
+  <div class="card-body">
+    <h3>${esc(p.name)}</h3>
+    ${p.badge ? `<div class="badge-wrap"><span class="badge">${esc(p.badge)}</span></div>` : ""}
+    <p>${esc(p.description)}</p>
+    <div class="btn-row"><a class="btn" href="${q}">Ask about ${esc(p.name)}</a></div>
+  </div>
+</article>`;
+  }).join(""),
+  reviews: (d, el) => (d.reviews || []).map(r =>
+    `<blockquote class="review"><p>${esc(r.text)}</p><footer>&mdash; ${esc(r.name)}${r.date ? `, <span>${esc(new Date(r.date + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" }))}</span>` : ""}</footer></blockquote>`).join(""),
+};
+
+async function renderContent() {
+  const jobs = [...document.querySelectorAll("[data-content]")].map(async el => {
+    const kind = el.dataset.content;
+    const src = el.dataset.src || kind;
+    try {
+      const res = await fetch(`data/${src}.json`, { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status);
+      el.innerHTML = RENDERERS[kind](await res.json(), el);
+    } catch (e) {
+      console.warn("Could not load", src, e);
+    }
+  });
+  await Promise.all(jobs);
+}
+
 buildHeader();
 buildFooter();
-initCarousels();
-initLightbox();
+renderContent().then(() => {
+  initCarousels();
+  initLightbox();
+});
 initForms();

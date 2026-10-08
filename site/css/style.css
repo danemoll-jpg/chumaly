@@ -176,7 +176,7 @@ main { display: block; }
   font-size: .8rem; color: var(--plum); margin-bottom: 4px;
 }
 .divider { margin: 18px auto; max-width: 240px; }
-.welcome-img { margin: 0 auto 10px; width: min(320px, 80%); }
+.welcome-img { margin: 0 auto 10px; width: min(320px, 80%); mix-blend-mode: multiply; }
 .hero-img {
   border-radius: var(--radius); box-shadow: var(--shadow);
   margin: 0 auto 18px; max-height: 70vh; object-fit: cover;
@@ -327,6 +327,17 @@ fieldset { border: 0; padding: 0; margin: 0 0 14px; }
 .lb-next { right: 10px; top: 50%; transform: translateY(-50%); }
 .lb-count { position: absolute; bottom: calc(16px + env(safe-area-inset-bottom)); left: 0; right: 0; text-align: center; color: #fff; font-family: var(--sans); font-size: .9rem; }
 .lb-caption { position: absolute; top: calc(22px + env(safe-area-inset-top)); left: 70px; right: 70px; text-align: center; color: #fff; font-style: italic; }
+
+/* ---------- Reviews ---------- */
+.reviews { display: grid; gap: 14px; margin: 0 0 20px; }
+.reviews:empty { display: none; }
+.review {
+  margin: 0; padding: 16px 18px; text-align: left;
+  background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.review p { margin: 0 0 .5em; font-style: italic; }
+.review footer { font-family: var(--sans); font-size: .9rem; color: var(--plum); font-weight: 700; }
+.review footer span { font-weight: 400; color: var(--ink-soft); }
 
 /* ---------- Bigger screens ---------- */
 @media (min-width: 640px) {

@@ -1,0 +1,71 @@
+# Pages CMS settings — this is what gives Mom her simple "edit the website" screens.
+# See ADMIN-GUIDE.md for how to use it.
+
+media:
+  input: site/images
+  output: images
+  categories: [image]
+
+content:
+  - name: puppies-maltese
+    label: Maltese Puppies
+    type: file
+    path: site/data/puppies-maltese.json
+    format: json
+    fields:
+      - name: puppies
+        label: Puppies
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Puppy's name, type: string, required: true }
+          - { name: badge, label: Badge (optional, e.g. Potty Tray Trained), type: string }
+          - { name: description, label: Description, type: text }
+          - { name: photos, label: Photos (first one is shown first), type: image, list: true }
+
+  - name: puppies-yorkie
+    label: Yorkie Puppies
+    type: file
+    path: site/data/puppies-yorkie.json
+    format: json
+    fields:
+      - name: puppies
+        label: Puppies
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Puppy's name, type: string, required: true }
+          - { name: badge, label: Badge (optional, e.g. Potty Tray Trained), type: string }
+          - { name: description, label: Description, type: text }
+          - { name: photos, label: Photos (first one is shown first), type: image, list: true }
+
+  - name: reviews
+    label: Reviews
+    type: file
+    path: site/data/reviews.json
+    format: json
+    fields:
+      - name: reviews
+        label: Reviews
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Customer name, type: string, required: true }
+          - { name: date, label: Date, type: date }
+          - { name: text, label: Review, type: text, required: true }
+
+  - name: gallery
+    label: Gallery Photos
+    type: file
+    path: site/data/gallery.json
+    format: json
+    fields:
+      - { name: photos, label: Photos, type: image, list: true }
+
+  - name: sold
+    label: Pups Sold (Happy Families)
+    type: file
+    path: site/data/sold.json
+    format: json
+    fields:
+      - { name: photos, label: Photos, type: image, list: true }

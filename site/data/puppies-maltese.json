@@ -1,0 +1,58 @@
+{
+  "puppies": [
+    {
+      "name": "Joleen",
+      "badge": "",
+      "description": "Sweet baby Joleen was born on June 28th, 2026. Her parents are Jandi and Joey.",
+      "photos": [
+        "images/763925829-10243720603332284-6166468172551927238-n.jpg",
+        "images/764711814-10243720603412286-3713577953740678821-n.jpg",
+        "images/763961735-10243720603732294-9092198681804895793-n.jpg"
+      ]
+    },
+    {
+      "name": "Jazlyn",
+      "badge": "Potty Tray Trained",
+      "description": "Jazlyn was born on June 28th, 2026, from Jandi and Joey. She is a lovely girl and the sister of Joleen.",
+      "photos": [
+        "images/8b30f65f-4ade-4e70-9e37-1b4077a6373a.jpg",
+        "images/33af1b52-e4d7-4c97-84ac-09b472399a6d.jpg",
+        "images/8b2640da-ecf5-4ef8-afaa-69427a8efd18.jpg"
+      ]
+    },
+    {
+      "name": "Ginny",
+      "badge": "Potty Tray Trained",
+      "description": "Ginny was born on May 10th, 2026. She is a daughter of Casanova and Gabriella. Ginny's estimated adult weight will be around 4.5–5 pounds.",
+      "photos": [
+        "images/876b2a05-7153-4638-8d09-5327c52cd6af.png"
+      ]
+    },
+    {
+      "name": "Gabby",
+      "badge": "Potty Tray Trained",
+      "description": "Gabby was born on May 10th, 2026. She is a daughter of Casanova and Gabriella. She loves playing with her sister Ginny.",
+      "photos": [
+        "images/65dd827a-9db1-4f3b-921e-fa7143057b02.jpg",
+        "images/debd019d-190e-4505-ad48-4be6bd59724c.jpg"
+      ]
+    },
+    {
+      "name": "Destiny",
+      "badge": "Potty Tray Trained",
+      "description": "Destiny was born on May 13th, 2026. She is the daughter of Fabio and Darla. This puppy is a tiny baby and is expected to be around 3–3.5 pounds as an adult.",
+      "photos": [
+        "images/2d3a00ef-07b0-47f2-98a4-2f8dac609895.jpg",
+        "images/9fa6142b-5753-432b-8b1d-cc26417e1221.png"
+      ]
+    },
+    {
+      "name": "Dasha",
+      "badge": "",
+      "description": "Dasha was born May 14th, 2026. Her parents are Dream Girl and Bom Bom. She is a loving girl and adores everyone who meets her. She hopes to find the perfect family!",
+      "photos": [
+        "images/ef1176d3-cb0a-4252-9475-e642242577b6.jpg"
+      ]
+    }
+  ]
+}
