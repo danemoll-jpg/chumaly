@@ -335,7 +335,7 @@ fieldset { border: 0; padding: 0; margin: 0 0 14px; }
   margin: 0; padding: 16px 18px; text-align: left;
   background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
 }
-.review p { margin: 0 0 .5em; font-style: italic; }
+.review p { margin: 0 0 .5em; font-style: italic; white-space: pre-line; }
 .review footer { font-family: var(--sans); font-size: .9rem; color: var(--plum); font-weight: 700; }
 .review footer span { font-weight: 400; color: var(--ink-soft); }
 
