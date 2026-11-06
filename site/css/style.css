@@ -33,7 +33,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   color: var(--ink);
-  background: var(--blush) url("../images/background-images/1143959384.jpg") center top / 100% auto repeat-y;
+  background: var(--blush) url("../design/background-images/1143959384.jpg") center top / 100% auto repeat-y;
   padding-bottom: calc(var(--actionbar-h) + env(safe-area-inset-bottom));
 }
 
@@ -68,7 +68,7 @@ p { margin: 0 0 1em; }
   height: var(--header-h);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 12px 0 16px;
-  background: #f7a8cf url("../images/header-roses.jpg") center / cover no-repeat;
+  background: #f7a8cf url("../design/header-roses.jpg") center / cover no-repeat;
   box-shadow: 0 2px 12px rgba(174, 64, 165, .25);
 }
 .logo {
@@ -127,7 +127,7 @@ body.menu-open { overflow: hidden; }
   display: flex; align-items: center; justify-content: space-between;
   height: var(--header-h);
   margin: 0 -16px 8px; padding: 0 12px 0 16px;
-  background: #f7a8cf url("../images/header-roses.jpg") center / cover no-repeat;
+  background: #f7a8cf url("../design/header-roses.jpg") center / cover no-repeat;
 }
 .menu-top .logo-name { font-size: 1.6rem; }
 .menu-close {
@@ -347,7 +347,7 @@ fieldset { border: 0; padding: 0; margin: 0 0 14px; }
   body { background: linear-gradient(90deg, #ffd3e8, #fff0f7 50%, #ffd3e8) fixed; }
   main {
     max-width: 760px; margin: 0 auto;
-    background: var(--blush) url("../images/background-images/1143959384.jpg") center top / 100% auto repeat-y;
+    background: var(--blush) url("../design/background-images/1143959384.jpg") center top / 100% auto repeat-y;
     box-shadow: 0 0 40px rgba(174, 64, 165, .18);
   }
   .welcome-img { width: 400px; }

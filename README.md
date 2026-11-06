@@ -25,10 +25,12 @@ Everything that goes on the internet is in the **`site/`** folder. The files nex
 | Colors, fonts, spacing | `site/css/style.css` (color settings at the top) |
 | Hamburger photo menu, phone/email, footer | `site/js/site.js` (`MENU` and `CONTACT` at the top) |
 | Page text | each `site/*.html` page |
-| Photos | `site/images/` (full size) and `site/images/thumbs/` (small versions for grids) |
+| Mom's photos (edited in Pages CMS) | `site/images/` — only photos she manages go here |
+| Design images (roses, dividers, backgrounds, photos built into pages) | `site/design/` — hidden from the editor so they can't be changed by accident |
+| Small thumbnail copies for grids | `site/thumbs/` |
 
 ### Adding a new puppy
-In `site/maltese-puppies.html`, copy one `<article class="card">…</article>` block, then change the name, text, and photo file names. Put the photo in `site/images/`, plus a copy of it (about 600px wide) in `site/images/thumbs/`.
+In `site/maltese-puppies.html`, copy one `<article class="card">…</article>` block, then change the name, text, and photo file names. Put the photo in `site/design/`, plus a copy of it (about 600px wide) in `site/thumbs/`.
 
 ## Going live (after testing)
 
