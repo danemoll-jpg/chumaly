@@ -257,11 +257,19 @@ function photoImg(path, alt, w, h) {
   return `<img src="${esc(tries[0])}" data-tries="${esc(JSON.stringify(tries.slice(1)))}" alt="${esc(alt)}" loading="lazy" width="${w}" height="${h}" onerror="const t=JSON.parse(this.dataset.tries||'[]');if(t.length){this.src=t.shift();this.dataset.tries=JSON.stringify(t)}">`;
 }
 
+// A photo is either a plain path or { photo, caption }.
+function photoGrid(d, group, fallbackAlt) {
+  return (d.photos || []).map(item => {
+    const p = typeof item === "string" ? { photo: item } : item;
+    if (!p.photo) return "";
+    const cap = (p.caption || "").trim();
+    return `<li><figure style="margin:0"><a href="${esc(p.photo)}" data-lightbox="${group}" data-caption="${esc(cap)}">${photoImg(p.photo, cap || fallbackAlt, 400, 400)}</a>${cap ? `<figcaption>${esc(cap)}</figcaption>` : ""}</figure></li>`;
+  }).join("");
+}
+
 const RENDERERS = {
-  gallery: (d, el) => (d.photos || []).map(p =>
-    `<li><figure style="margin:0"><a href="${esc(p)}" data-lightbox="gallery">${photoImg(p, "Chumaly puppy", 400, 400)}</a></figure></li>`).join(""),
-  sold: (d, el) => (d.photos || []).map(p =>
-    `<li><figure style="margin:0"><a href="${esc(p)}" data-lightbox="sold">${photoImg(p, "Chumaly puppy with new owner", 400, 400)}</a></figure></li>`).join(""),
+  gallery: (d, el) => photoGrid(d, "gallery", "Chumaly puppy"),
+  sold: (d, el) => photoGrid(d, "sold", "Chumaly puppy with new owner"),
   puppies: (d, el) => (d.puppies || []).map(p => {
     const id = String(p.name).toLowerCase().replace(/[^a-z0-9]+/g, "-");
     const slides = (p.photos || []).map(src =>
