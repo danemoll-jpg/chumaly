@@ -1,5 +1,5 @@
-# Pages CMS settings — this is what gives Mom her simple "edit the website" screens.
-# See ADMIN-GUIDE.md for how to use it.
+# Pages CMS settings: the simple "edit the website" screens Mom uses.
+# She signs in at https://app.pagescms.org. See ADMIN-GUIDE.md.
 
 media:
   input: site/images
@@ -7,8 +7,54 @@ media:
   categories: [image]
 
 content:
+  - name: reviews
+    label: ⭐ Reviews
+    type: file
+    path: site/data/reviews.json
+    format: json
+    fields:
+      - name: reviews
+        label: Reviews
+        description: "Add a review with the button at the bottom. Drag the ⋮⋮ handle to change the order (the top 3 also show on the home page). Press Save when done."
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Customer's name, type: string, required: true }
+          - { name: text, label: What they said, type: text, required: true }
+          - { name: date, label: Date (optional), type: date }
+
+  - name: gallery
+    label: 📷 Gallery Photos
+    type: file
+    path: site/data/gallery.json
+    format: json
+    fields:
+      - name: photos
+        label: Photos
+        description: "Add a photo with the button at the bottom. Drag the ⋮⋮ handle to change the order. Press Save when done."
+        type: object
+        list: true
+        fields:
+          - { name: photo, label: Photo, type: image, required: true }
+          - { name: caption, label: Caption (optional), type: string }
+
+  - name: sold
+    label: 🏡 Happy Families (Pups Sold)
+    type: file
+    path: site/data/sold.json
+    format: json
+    fields:
+      - name: photos
+        label: Photos
+        description: "Add a photo with the button at the bottom. Drag the ⋮⋮ handle to change the order. Press Save when done."
+        type: object
+        list: true
+        fields:
+          - { name: photo, label: Photo, type: image, required: true }
+          - { name: caption, label: Caption (optional), type: string }
+
   - name: puppies-maltese
-    label: Maltese Puppies
+    label: 🐶 Maltese Puppies
     type: file
     path: site/data/puppies-maltese.json
     format: json
@@ -24,7 +70,7 @@ content:
           - { name: photos, label: Photos (first one is shown first), type: image, list: true }
 
   - name: puppies-yorkie
-    label: Yorkie Puppies
+    label: 🐶 Yorkie Puppies
     type: file
     path: site/data/puppies-yorkie.json
     format: json
@@ -38,34 +84,3 @@ content:
           - { name: badge, label: Badge (optional, e.g. Potty Tray Trained), type: string }
           - { name: description, label: Description, type: text }
           - { name: photos, label: Photos (first one is shown first), type: image, list: true }
-
-  - name: reviews
-    label: Reviews
-    type: file
-    path: site/data/reviews.json
-    format: json
-    fields:
-      - name: reviews
-        label: Reviews
-        type: object
-        list: true
-        fields:
-          - { name: name, label: Customer name, type: string, required: true }
-          - { name: date, label: Date, type: date }
-          - { name: text, label: Review, type: text, required: true }
-
-  - name: gallery
-    label: Gallery Photos
-    type: file
-    path: site/data/gallery.json
-    format: json
-    fields:
-      - { name: photos, label: Photos, type: image, list: true }
-
-  - name: sold
-    label: Pups Sold (Happy Families)
-    type: file
-    path: site/data/sold.json
-    format: json
-    fields:
-      - { name: photos, label: Photos, type: image, list: true }
