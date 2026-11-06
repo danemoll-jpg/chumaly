@@ -277,7 +277,7 @@ const RENDERERS = {
   </div>
 </article>`;
   }).join(""),
-  reviews: (d, el) => (d.reviews || []).map(r =>
+  reviews: (d, el) => (d.reviews || []).slice(0, Number(el.dataset.limit) || undefined).map(r =>
     `<blockquote class="review"><p>${esc(r.text)}</p><footer>&mdash; ${esc(r.name)}${r.date ? `, <span>${esc(new Date(r.date + "T12:00:00").toLocaleDateString("en-US", { month: "long", year: "numeric" }))}</span>` : ""}</footer></blockquote>`).join(""),
 };
 
