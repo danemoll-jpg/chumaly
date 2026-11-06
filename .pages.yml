@@ -1,6 +1,7 @@
 # Pages CMS settings: the simple "edit the website" screens Mom uses.
 # She signs in at https://app.pagescms.org. See ADMIN-GUIDE.md.
 
+# Only site/images is shown in the editor. Design images live in site/design so Mom can't change them by accident.
 media:
   input: site/images
   output: images

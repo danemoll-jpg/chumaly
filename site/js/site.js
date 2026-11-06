@@ -18,23 +18,23 @@ const CONTACT = {
 // Each menu item shows a photo tile. img paths are relative to the site root.
 const MENU = [
   { group: "Maltese", items: [
-    { href: "maltese-puppies.html", label: "Maltese Puppies", img: "images/thumbs/editor/photoroom-20260722-202757.jpg" },
-    { href: "maltese-adults.html",  label: "Maltese Adults",  img: "images/thumbs/2203ae65-6c1e-4788-a1b1-525b2e380730.jpg" },
-    { href: "our-breeders.html",    label: "Maltese Parents", img: "images/thumbs/73e39e27-f662-4e5d-9cff-03e3d9e9cc9b.jpg" },
+    { href: "maltese-puppies.html", label: "Maltese Puppies", img: "thumbs/editor/photoroom-20260722-202757.jpg" },
+    { href: "maltese-adults.html",  label: "Maltese Adults",  img: "thumbs/2203ae65-6c1e-4788-a1b1-525b2e380730.jpg" },
+    { href: "our-breeders.html",    label: "Maltese Parents", img: "thumbs/73e39e27-f662-4e5d-9cff-03e3d9e9cc9b.jpg" },
   ]},
   { group: "Yorkies", items: [
-    { href: "yorkie-puppies.html",  label: "Yorkie Puppies",  img: "images/thumbs/50571611-10218230301730675-4624571581740351488-n.jpg" },
-    { href: "yorkie-adults.html",   label: "Yorkie Adults",   img: "images/thumbs/published/471463675-10235540531755607-6397753610116016302-n.jpg" },
-    { href: "our-breeders1.html",   label: "Yorkie Parents",  img: "images/thumbs/capri-1.jpg" },
+    { href: "yorkie-puppies.html",  label: "Yorkie Puppies",  img: "thumbs/50571611-10218230301730675-4624571581740351488-n.jpg" },
+    { href: "yorkie-adults.html",   label: "Yorkie Adults",   img: "thumbs/published/471463675-10235540531755607-6397753610116016302-n.jpg" },
+    { href: "our-breeders1.html",   label: "Yorkie Parents",  img: "thumbs/capri-1.jpg" },
   ]},
   { group: "Photos & More", items: [
-    { href: "index.html",            label: "Home",             img: "images/thumbs/jiin-baby-boy-tes-yea-081419.jpg" },
-    { href: "gallery.html",          label: "Gallery",          img: "images/thumbs/468079965-10235139345326197-7368899303602741092-n.jpg" },
-    { href: "pups-sold.html",        label: "Pups Sold",        img: "images/thumbs/557479128-10239213524898140-36556539784583854-n.jpg" },
-    { href: "about-us.html",         label: "About Us",         img: "images/thumbs/published/e2652b9c-e072-481e-a5b4-54cd329f9aba.jpg" },
-    { href: "health-guarantee.html", label: "Health Guarantee", img: "images/thumbs/barbie.jpg" },
-    { href: "testimonial.html",      label: "Reviews",          img: "images/thumbs/monet-031822.jpg" },
-    { href: "contact-form.html",     label: "Contact Us",       img: "images/thumbs/download.jpg" },
+    { href: "index.html",            label: "Home",             img: "thumbs/jiin-baby-boy-tes-yea-081419.jpg" },
+    { href: "gallery.html",          label: "Gallery",          img: "thumbs/468079965-10235139345326197-7368899303602741092-n.jpg" },
+    { href: "pups-sold.html",        label: "Pups Sold",        img: "thumbs/557479128-10239213524898140-36556539784583854-n.jpg" },
+    { href: "about-us.html",         label: "About Us",         img: "thumbs/published/e2652b9c-e072-481e-a5b4-54cd329f9aba.jpg" },
+    { href: "health-guarantee.html", label: "Health Guarantee", img: "thumbs/barbie.jpg" },
+    { href: "testimonial.html",      label: "Reviews",          img: "thumbs/monet-031822.jpg" },
+    { href: "contact-form.html",     label: "Contact Us",       img: "thumbs/download.jpg" },
   ]},
 ];
 
@@ -113,7 +113,7 @@ function buildFooter() {
   const footer = document.createElement("footer");
   footer.className = "site-footer";
   footer.innerHTML = `
-    <img class="divider" src="images/published/f995273f026e454365101e25b327d744.gif" alt="" width="255" height="76" loading="lazy">
+    <img class="divider" src="design/published/f995273f026e454365101e25b327d744.gif" alt="" width="255" height="76" loading="lazy">
     <div class="footer-title">We would love to have you visit soon!</div>
     <div><a href="tel:${CONTACT.phoneLink}">${CONTACT.phone}</a> &middot; <a href="mailto:${CONTACT.email}">${CONTACT.email}</a></div>
     <div>${CONTACT.location}</div>
@@ -253,7 +253,7 @@ const esc = t => String(t ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 // Small thumbnail if one exists, else a resized copy from Netlify, else the original photo.
 function photoImg(path, alt, w, h) {
   const file = path.replace(/^\/?images\//, "");
-  const tries = [`images/thumbs/${file}`, `/.netlify/images?url=/${path}&w=800`, path];
+  const tries = [`thumbs/${file}`, `/.netlify/images?url=/${path}&w=800`, path];
   return `<img src="${esc(tries[0])}" data-tries="${esc(JSON.stringify(tries.slice(1)))}" alt="${esc(alt)}" loading="lazy" width="${w}" height="${h}" onerror="const t=JSON.parse(this.dataset.tries||'[]');if(t.length){this.src=t.shift();this.dataset.tries=JSON.stringify(t)}">`;
 }
 
