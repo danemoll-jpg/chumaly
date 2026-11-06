@@ -30,7 +30,7 @@ Everything that goes on the internet is in the **`site/`** folder. The files nex
 | Small thumbnail copies for grids | `site/thumbs/` |
 
 ### Adding a new puppy
-In `site/maltese-puppies.html`, copy one `<article class="card">…</article>` block, then change the name, text, and photo file names. Put the photo in `site/design/`, plus a copy of it (about 600px wide) in `site/thumbs/design/`.
+In `site/maltese-puppies.html`, copy one `<article class="card">…</article>` block, then change the name, text, and photo file names. Put the photo in `site/design/`, plus a copy of it (about 600px wide) in `site/thumbs/`.
 
 ## Going live (after testing)
 
