@@ -1,3 +1,13 @@
 {
-  "puppies": []
+  "puppies": [
+    {
+      "name": "Brandy",
+      "badge": "",
+      "description": "Meet Brandy! This precious little Yorkie girl was born September 7th, 2026. Her parents are Black Velvet and Capri. Brandy has the classic Baby Doll Face, a rich black and tan coat, and the sweetest little personality. She is ready to steal your heart!",
+      "photos": [
+        "images/brandy-2-112026.jpg",
+        "images/brandy-1-112026.jpg"
+      ]
+    }
+  ]
 }
