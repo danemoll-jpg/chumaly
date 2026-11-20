@@ -3,10 +3,27 @@
     {
       "name": "Brandy",
       "badge": "",
-      "description": "Meet Brandy! This precious little Yorkie girl was born September 7th, 2026. Her parents are Black Velvet and Capri. Brandy has the classic Baby Doll Face, a rich black and tan coat, and the sweetest little personality. She is ready to steal your heart!",
+      "description": "Meet Brandy! This precious little Yorkie girl was born September 7th, 2026. Her mom is Black Velvet and her dad is Capri, and she is a littermate of Brady and Bowie. Brandy has the classic Baby Doll Face, a rich black and tan coat, and the sweetest little personality. She is ready to steal your heart!",
       "photos": [
-        "images/brandy-2-112026.jpg",
-        "images/brandy-1-112026.jpg"
+        "images/brandy-1-112026.jpg",
+        "images/brandy-2-112026.jpg"
+      ]
+    },
+    {
+      "name": "Brady",
+      "badge": "",
+      "description": "Meet Brady! This handsome baby boy was born September 7th, 2026. His mom is Black Velvet and his dad is Capri, and he is a littermate of Brandy and Bowie. Brady has a gorgeous black and tan coat, a sweet teddy bear face, and plenty of puppy charm. He is ready to be someone's best buddy!",
+      "photos": [
+        "images/brady-1-112026.jpg",
+        "images/brady-2-112026.jpg"
+      ]
+    },
+    {
+      "name": "Bowie",
+      "badge": "",
+      "description": "Meet Bowie! This adorable Yorkie baby was born September 7th, 2026. Bowie's mom is Black Velvet and dad is Capri, and Bowie is a littermate of Brandy and Brady. With a darling Baby Doll Face, bright eyes, and a soft black and tan coat, Bowie is pure sweetness and ready for a loving forever home.",
+      "photos": [
+        "images/bowie-1-112026.jpg"
       ]
     }
   ]
